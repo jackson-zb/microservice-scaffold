@@ -20,6 +20,63 @@
         <module>gateway</module>
         <module>business</module>
         <module>mail</module>
+        <module>common</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+
+            <!-- Structured logging -->
+            <dependency>
+                <groupId>structlog4j</groupId>
+                <artifactId>structlog4j-api</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- Optional JSON formatter -->
+            <dependency>
+                <groupId>structlog4j</groupId>
+                <artifactId>structlog4j-json</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- Common -->
+            <dependency>
+                <groupId>ink.zhaibo</groupId>
+                <artifactId>common</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
 
 </project>
