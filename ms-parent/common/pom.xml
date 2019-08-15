@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>common</artifactId>
-    <name>Common-Library</name>
     <version>1.0.1</version>
 
     <dependencies>
@@ -30,10 +29,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.sentry</groupId>
-            <artifactId>sentry</artifactId>
         </dependency>
     </dependencies>
 </project>

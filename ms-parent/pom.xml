@@ -12,8 +12,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <common.version>1.8</common.version>
         <spring.boot.version>2.1.2.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
+        <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
+        <swagger.version>2.9.2</swagger.version>
+        <structlog4j.version>1.0.0</structlog4j.version>
     </properties>
 
     <modules>
@@ -22,6 +26,7 @@
         <module>mail</module>
         <module>common</module>
     </modules>
+
 
     <dependencyManagement>
         <dependencies>
@@ -46,37 +51,36 @@
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
-                <version>2.9.2</version>
+                <version>${swagger.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
-                <version>2.9.2</version>
+                <version>${swagger.version}</version>
             </dependency>
 
             <!-- Structured logging -->
             <dependency>
                 <groupId>structlog4j</groupId>
                 <artifactId>structlog4j-api</artifactId>
-                <version>1.0.0</version>
+                <version>${structlog4j.version}</version>
             </dependency>
 
             <!-- Optional JSON formatter -->
             <dependency>
                 <groupId>structlog4j</groupId>
                 <artifactId>structlog4j-json</artifactId>
-                <version>1.0.0</version>
+                <version>${structlog4j.version}</version>
             </dependency>
 
             <!-- Common -->
             <dependency>
                 <groupId>ink.zhaibo</groupId>
                 <artifactId>common</artifactId>
-                <version>1.0.1</version>
+                <version>${common.version}</version>
             </dependency>
 
         </dependencies>
     </dependencyManagement>
-
 
 </project>
