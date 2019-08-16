@@ -21,12 +21,11 @@
     </properties>
 
     <modules>
-        <module>gateway</module>
+        <module>proxy</module>
         <module>business</module>
-        <module>mail</module>
         <module>common</module>
+        <module>registry</module>
     </modules>
-
 
     <dependencyManagement>
         <dependencies>
