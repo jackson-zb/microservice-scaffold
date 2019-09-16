@@ -13,6 +13,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>ink.zhaibo</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.activiti</groupId>
             <artifactId>activiti-spring-boot-starter-basic</artifactId>
             <version>${activiti.version}</version>
