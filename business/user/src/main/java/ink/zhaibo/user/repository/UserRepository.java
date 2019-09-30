@@ -1,6 +1,6 @@
 package ink.zhaibo.user.repository;
 
-import ink.zhaibo.user.domain.User;
+import ink.zhaibo.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

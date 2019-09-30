@@ -1,6 +1,8 @@
-package ink.zhaibo.user.domain;
+package ink.zhaibo.user.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

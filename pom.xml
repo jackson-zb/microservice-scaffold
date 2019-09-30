@@ -30,7 +30,6 @@
         <module>business</module>
         <module>common</module>
         <module>registry</module>
-        <module>bpmn</module>
         <module>auth</module>
     </modules>
 
