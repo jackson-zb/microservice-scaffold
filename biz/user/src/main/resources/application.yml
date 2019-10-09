@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://132.232.59.17:3306/mc_userdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Hongkong
     username: root
-    password: "0000"
+    password:
     druid:
       db-type: mysql
   jpa:
