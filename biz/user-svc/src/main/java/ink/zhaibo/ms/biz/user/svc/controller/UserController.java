@@ -1,8 +1,8 @@
-package ink.zhaibo.ms.biz.user.controller;
+package ink.zhaibo.ms.biz.user.svc.controller;
 
-import ink.zhaibo.ms.biz.user.service.UserService;
-import ink.zhaibo.ms.biz.user.api.GetUserRequest;
-import ink.zhaibo.ms.biz.user.api.GetUserResponse;
+import ink.zhaibo.ms.biz.user.svc.service.UserService;
+import ink.zhaibo.ms.biz.user.svc.api.GetUserRequest;
+import ink.zhaibo.ms.biz.user.svc.api.GetUserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

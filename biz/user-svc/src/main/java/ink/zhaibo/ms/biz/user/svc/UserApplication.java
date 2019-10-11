@@ -1,9 +1,8 @@
-package ink.zhaibo.ms.biz.user;
+package ink.zhaibo.ms.biz.user.svc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient

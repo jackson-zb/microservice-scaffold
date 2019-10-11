@@ -1,4 +1,4 @@
-package ink.zhaibo.ms.biz.user.api;
+package ink.zhaibo.ms.biz.user.svc.api;
 
 import ink.zhaibo.ms.common.api.BaseRequest;
 import lombok.AllArgsConstructor;

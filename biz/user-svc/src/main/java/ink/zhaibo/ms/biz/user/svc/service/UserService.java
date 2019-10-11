@@ -1,9 +1,9 @@
-package ink.zhaibo.ms.biz.user.service;
+package ink.zhaibo.ms.biz.user.svc.service;
 
-import ink.zhaibo.ms.biz.user.api.GetUserResponse;
-import ink.zhaibo.ms.biz.user.api.GetUserRequest;
-import ink.zhaibo.ms.biz.user.entity.User;
-import ink.zhaibo.ms.biz.user.repository.UserRepository;
+import ink.zhaibo.ms.biz.user.svc.api.GetUserResponse;
+import ink.zhaibo.ms.biz.user.svc.api.GetUserRequest;
+import ink.zhaibo.ms.biz.user.svc.entity.User;
+import ink.zhaibo.ms.biz.user.svc.repository.UserRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
