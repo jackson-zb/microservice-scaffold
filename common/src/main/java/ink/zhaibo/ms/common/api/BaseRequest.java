@@ -15,7 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BaseRequest implements Serializable{
+public class BaseRequest implements Serializable {
     private static final long serialVersionUID = -2304155085638896178L;
     private String token;
 }

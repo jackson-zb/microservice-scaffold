@@ -12,16 +12,13 @@
     <artifactId>biz</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>user</module>
+        <module>user-api</module>
+        <module>user-svc</module>
         <module>order</module>
         <module>product</module>
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>ink.zhaibo</groupId>
-            <artifactId>common</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
@@ -34,7 +31,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -44,11 +40,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>ink.zhaibo</groupId>
-                <artifactId>common</artifactId>
-                <version>${common.version}</version>
-            </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>

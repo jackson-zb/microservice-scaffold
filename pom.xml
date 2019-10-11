@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <common.version>1.0.0</common.version>
+        <common.version>1.0-SNAPSHOT</common.version>
         <spring.boot.version>2.1.2.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
         <swagger.version>2.9.2</swagger.version>
@@ -31,6 +31,7 @@
         <module>proxy</module>
         <module>auth</module>
         <module>biz</module>
+        <module>monitor</module>
     </modules>
 
     <dependencyManagement>
@@ -78,14 +79,16 @@
                 <version>${structlog4j.version}</version>
             </dependency>
 
-            <!-- Common -->
-            <dependency>
-                <groupId>ink.zhaibo</groupId>
-                <artifactId>common</artifactId>
-                <version>${common.version}</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <!-- Common -->
+        <dependency>
+            <groupId>ink.zhaibo.ms</groupId>
+            <artifactId>common</artifactId>
+            <version>${common.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
