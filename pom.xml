@@ -23,6 +23,8 @@
         <activiti-explorer.version>5.22.0</activiti-explorer.version>
         <activiti-diagram-rest.version>5.22.0</activiti-diagram-rest.version>
         <activiti-simple-workflow.version>5.22.0</activiti-simple-workflow.version>
+        <rocketmq.version>4.3.0</rocketmq.version>
+        <oauth2.version>2.0.12.RELEASE</oauth2.version>
     </properties>
 
     <modules>
@@ -77,6 +79,12 @@
                 <groupId>structlog4j</groupId>
                 <artifactId>structlog4j-json</artifactId>
                 <version>${structlog4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>${rocketmq.version}</version>
             </dependency>
 
         </dependencies>
