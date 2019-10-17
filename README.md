@@ -1,8 +1,6 @@
 # microservice-scaffold
 
-### actuator面板：http://localhost:8761/actuator/prometheus
-### 注册中心面板：http://localhost:8761/
+### nacos面板：http://localhost:8848/nacos/index.html 帐号和密码：nacos nacos
 ### hystrix面板：http://localhost:8761/hystrix
 
 Sentinel dashboard
-Nacos
