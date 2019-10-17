@@ -13,9 +13,14 @@ zuul:
     user:
       path: /user/**
       serviceId: user
+    auth:
+      path: /auth/**
+      serviceId: auth
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000
+    max-per-route-connections: 20
+
 ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
