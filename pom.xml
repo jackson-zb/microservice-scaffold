@@ -25,6 +25,7 @@
         <activiti-simple-workflow.version>5.22.0</activiti-simple-workflow.version>
         <rocketmq.version>4.3.0</rocketmq.version>
         <oauth2.version>2.0.12.RELEASE</oauth2.version>
+        <zipkin.version>2.12.9</zipkin.version>
     </properties>
 
     <modules>
@@ -93,11 +94,6 @@
 
     <dependencies>
         <!-- Common -->
-        <dependency>
-            <groupId>ink.zhaibo.ms</groupId>
-            <artifactId>common</artifactId>
-            <version>${common.version}</version>
-        </dependency>
     </dependencies>
 
 </project>

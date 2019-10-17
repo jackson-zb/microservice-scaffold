@@ -1,0 +1,7 @@
+server:
+  port: 8901
+spring:
+  application:
+    name: zipkin-server
+  sleuth:
+    enabled: false

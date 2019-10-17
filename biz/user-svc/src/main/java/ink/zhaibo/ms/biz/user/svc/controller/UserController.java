@@ -5,6 +5,7 @@ import ink.zhaibo.ms.biz.user.svc.api.GetUserRequest;
 import ink.zhaibo.ms.biz.user.svc.api.GetUserResponse;
 import ink.zhaibo.ms.biz.user.svc.listener.TestTransactionListener;
 import ink.zhaibo.ms.biz.user.svc.service.UserService;
+import ink.zhaibo.ms.user.api.dto.GetUserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendCallback;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 /**
  * @Author zhaibo
@@ -74,9 +76,8 @@ public class UserController {
     }
 
     @PostMapping("getById")
-    public GetUserResponse getUser(@RequestBody @Valid GetUserRequest request) {
-        GetUserResponse response = userService.getUser(request);
-        return response;
+    public GetUserDto getUser(@NotNull Long userId) {
+        return userService.getUser(userId);
     }
 }
 

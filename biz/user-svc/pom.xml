@@ -18,5 +18,10 @@
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
+        <dependency>
+            <groupId>ink.zhaibo.ms</groupId>
+            <artifactId>user-api</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
     </dependencies>
 </project>
