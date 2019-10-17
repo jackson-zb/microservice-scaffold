@@ -26,6 +26,9 @@
         <rocketmq.version>4.3.0</rocketmq.version>
         <oauth2.version>2.0.12.RELEASE</oauth2.version>
         <zipkin.version>2.12.9</zipkin.version>
+        <spring.cloud.alibaba.version>0.2.1.RELEASE</spring.cloud.alibaba.version>
+        <nacos.version>0.9.0.RELEASE</nacos.version>
+        <lombok.version>0.9.0.RELEASE</lombok.version>
     </properties>
 
     <modules>
@@ -33,8 +36,9 @@
         <module>registry</module>
         <module>proxy</module>
         <module>auth</module>
-        <module>biz</module>
         <module>monitor</module>
+        <module>business-api</module>
+        <module>business-svc</module>
         <module>web-app</module>
     </modules>
 
@@ -89,11 +93,31 @@
                 <version>${rocketmq.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-sentinel</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ink.zhaibo.ms</groupId>
+                <artifactId>common</artifactId>
+                <version>${common.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
-        <!-- Common -->
     </dependencies>
 
 </project>

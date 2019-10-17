@@ -15,6 +15,10 @@ spring:
     show-sql: true
     jackson:
       time-zone: GMT+8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
 eureka:
   client:

@@ -3,10 +3,10 @@ server:
 spring:
   application:
     name: proxy
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
 zuul:
   routes:

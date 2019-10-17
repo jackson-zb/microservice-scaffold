@@ -4,13 +4,10 @@ server:
 spring:
   application:
     name: registry
-
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    serviceUrl:
-      defaultZone: http://localhost:${server.port}/eureka/
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
 management:
   endpoints:

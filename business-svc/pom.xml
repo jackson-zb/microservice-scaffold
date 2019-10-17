@@ -9,16 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>biz</artifactId>
+    <artifactId>business-svc</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>user-api</module>
         <module>user-svc</module>
-        <module>order</module>
-        <module>product</module>
     </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
@@ -26,10 +27,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -43,7 +40,6 @@
         <dependency>
             <groupId>ink.zhaibo.ms</groupId>
             <artifactId>common</artifactId>
-            <version>${common.version}</version>
         </dependency>
     </dependencies>
 
