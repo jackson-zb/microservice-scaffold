@@ -1,5 +1,5 @@
 server:
-  port: 8088
+  port: 8087
 spring:
   application:
     name: web-app
@@ -10,3 +10,7 @@ spring:
 feign:
   sentinel:
     enabled: true
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000

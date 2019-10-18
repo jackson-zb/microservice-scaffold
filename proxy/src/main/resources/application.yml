@@ -10,9 +10,9 @@ spring:
 
 zuul:
   routes:
-    user:
-      path: /user/**
-      serviceId: user
+    web-app:
+      path: /web-app/**
+      serviceId: web-app
     auth:
       path: /auth/**
       serviceId: auth
@@ -20,7 +20,3 @@ zuul:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000
     max-per-route-connections: 20
-
-ribbon:
-  ReadTimeout: 60000
-  ConnectTimeout: 60000

@@ -37,10 +37,6 @@
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
         </dependency>
-        <dependency>
-            <groupId>ink.zhaibo.ms</groupId>
-            <artifactId>common</artifactId>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>

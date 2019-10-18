@@ -1,8 +1,6 @@
 package ink.zhaibo.ms.biz.user.svc.controller;
 
 import com.alibaba.druid.support.json.JSONUtils;
-import ink.zhaibo.ms.biz.user.svc.api.GetUserRequest;
-import ink.zhaibo.ms.biz.user.svc.api.GetUserResponse;
 import ink.zhaibo.ms.biz.user.svc.listener.TestTransactionListener;
 import ink.zhaibo.ms.biz.user.svc.service.UserService;
 import ink.zhaibo.ms.user.api.dto.GetUserDto;
