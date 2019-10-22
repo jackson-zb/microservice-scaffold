@@ -37,11 +37,6 @@ public class ServiceException extends RuntimeException {
         this.resultCode = ResultCode.FAILURE;
     }
 
-    /**
-     * for better performance
-     *
-     * @return Throwable
-     */
     @Override
     public Throwable fillInStackTrace() {
         return this;

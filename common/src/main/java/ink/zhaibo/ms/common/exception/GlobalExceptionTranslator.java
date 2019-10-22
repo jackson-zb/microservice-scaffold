@@ -21,10 +21,6 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.util.Set;
 
-/**
- * @Author zhaibo
- * @Date 2019/8/7 10:59
- */
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionTranslator {
