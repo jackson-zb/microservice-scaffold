@@ -18,3 +18,8 @@ spring:
         uri: lb://web-app
         predicates:
           path: /web-app/**
+      routes:
+        id: auth
+        uri: lb://auth
+        predicates:
+          path: /auth/**
