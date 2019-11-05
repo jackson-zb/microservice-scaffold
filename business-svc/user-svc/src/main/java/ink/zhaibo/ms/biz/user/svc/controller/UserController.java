@@ -11,9 +11,11 @@ import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.client.producer.TransactionMQProducer;
 import org.apache.rocketmq.common.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -22,22 +24,22 @@ import javax.validation.constraints.NotNull;
  **/
 @RestController
 @Slf4j
-@RequestMapping("/api/v1/user/")
+@RequestMapping("/user/")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private DefaultMQProducer defaultMQProducer;
+   /* @Autowired
+    private DefaultMQProducer defaultMQProducer;*/
 
-    @Autowired
+  /*  @Autowired
     private TestTransactionListener testTransactionListener;
 
     @Autowired
     private TransactionMQProducer transactionMQProducer;
-
-    @GetMapping("testMq")
+*/
+   /* @GetMapping("testMq")
     public void test(String info) throws Exception {
         Message message = new Message("TopicTest", "Tag1", "12345", "rocketmq测试成功".getBytes());
         defaultMQProducer.send(message, new SendCallback() {
@@ -52,8 +54,8 @@ public class UserController {
                 log.error("传输失败", e);
             }
         });
-    }
-
+    }*/
+/*
     @GetMapping("testMqt")
     public void Ttest(String info) throws Exception {
         Message message = new Message("t_TopicTest", "Tag1", "12345", "rocketmq事务消息测试成功".getBytes());
@@ -71,7 +73,7 @@ public class UserController {
                 log.error("传输失败", e);
             }
         });
-    }
+    }*/
 
     @PostMapping("getById")
     public GetUserDto getUser(@NotNull Long userId) {

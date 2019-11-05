@@ -12,8 +12,13 @@ import org.springframework.context.annotation.ComponentScan;
  **/
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableFeignClients
-@ComponentScan(basePackages = {"ink.zhaibo.ms.user.api"})
+@EnableFeignClients(basePackages = {
+        "ink.zhaibo.ms.user.client"
+})
+@ComponentScan(basePackages = {
+        "ink.zhaibo.ms.user.api",
+        "ink.zhaibo.ms.web.app",
+})
 public class WebAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(WebAppApplication.class, args);

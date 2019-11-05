@@ -20,6 +20,6 @@ public class WebAppAspect {
         Object proceed = joinPoint.proceed(args);
         BaseResponse response = new BaseResponse();
         response.setData(proceed);
-        return response;
+        return proceed;
     }
 }

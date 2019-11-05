@@ -125,15 +125,11 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
             <version>${logstash.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>ink.zhaibo.ms</groupId>
-            <artifactId>common</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
     <build>
         <plugins>

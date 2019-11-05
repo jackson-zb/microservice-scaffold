@@ -20,14 +20,6 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-    prefer-ip-address: true
-
 rocketmq:
   producer:
     groupName: ${spring.application.name}

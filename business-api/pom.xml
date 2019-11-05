@@ -8,8 +8,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <version>${parent.version}</version>
+    <version>1.0-SNAPSHOT</version>
     <artifactId>business-api</artifactId>
-
+    <packaging>pom</packaging>
+    <modules>
+        <module>user-api</module>
+    </modules>
 
 </project>

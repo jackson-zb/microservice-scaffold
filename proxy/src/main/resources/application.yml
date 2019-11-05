@@ -7,19 +7,14 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-      config:
-        server-addr: 127.0.0.1:8848
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        id: web-app
-        uri: lb://web-app
-        predicates:
-          path: /web-app/**
-      routes:
-        id: auth
-        uri: lb://auth
-        predicates:
-          path: /auth/**
+#      config:
+#        server-addr: 127.0.0.1:8848
+
+zuul:
+  routes:
+    user:
+      path: /webapp/**
+      serviceId: web-app
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
