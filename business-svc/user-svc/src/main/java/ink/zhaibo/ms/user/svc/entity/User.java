@@ -1,4 +1,4 @@
-package ink.zhaibo.ms.biz.user.svc.entity;
+package ink.zhaibo.ms.user.svc.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

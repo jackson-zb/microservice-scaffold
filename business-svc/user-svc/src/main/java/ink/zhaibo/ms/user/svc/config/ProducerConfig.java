@@ -1,4 +1,4 @@
-package ink.zhaibo.ms.biz.user.svc.config;
+package ink.zhaibo.ms.user.svc.config;
 
 import lombok.Data;
 import lombok.ToString;

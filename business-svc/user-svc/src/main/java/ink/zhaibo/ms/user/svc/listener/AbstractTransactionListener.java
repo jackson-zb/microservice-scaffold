@@ -1,4 +1,4 @@
-package ink.zhaibo.ms.biz.user.svc.listener;
+package ink.zhaibo.ms.user.svc.listener;
 
 import org.apache.rocketmq.client.producer.LocalTransactionState;
 import org.apache.rocketmq.client.producer.TransactionListener;

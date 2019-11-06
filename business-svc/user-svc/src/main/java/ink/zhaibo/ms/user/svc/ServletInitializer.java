@@ -1,4 +1,4 @@
-package ink.zhaibo.ms.biz.user.svc;
+package ink.zhaibo.ms.user.svc;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

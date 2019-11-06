@@ -1,18 +1,11 @@
-package ink.zhaibo.ms.biz.user.svc.controller;
+package ink.zhaibo.ms.user.svc.controller;
 
-import com.alibaba.druid.support.json.JSONUtils;
-import ink.zhaibo.ms.biz.user.svc.listener.TestTransactionListener;
-import ink.zhaibo.ms.biz.user.svc.service.UserService;
 import ink.zhaibo.ms.user.api.dto.GetUserDto;
+import ink.zhaibo.ms.user.svc.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.rocketmq.client.producer.DefaultMQProducer;
-import org.apache.rocketmq.client.producer.SendCallback;
-import org.apache.rocketmq.client.producer.SendResult;
-import org.apache.rocketmq.client.producer.TransactionMQProducer;
-import org.apache.rocketmq.common.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -75,9 +68,9 @@ public class UserController {
         });
     }*/
 
-    @PostMapping("getById")
-    public GetUserDto getUser(@NotNull Long userId) {
-        return userService.getUser(userId);
+    @GetMapping("{id}")
+    public GetUserDto getUser(@NotNull @PathVariable Long id) {
+        return userService.getUser(id);
     }
 }
 

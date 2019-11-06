@@ -15,14 +15,28 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BaseResponse implements Serializable{
+public class BaseResponse implements Serializable {
     private static final long serialVersionUID = 4851720251615536689L;
-    private String message;
-    private Object data;
+    @Builder.Default
+    private String message = ResultCode.SUCCESS.getMsg();
 
     @Builder.Default
-    private ResultCode code = ResultCode.SUCCESS;
+    private Integer code = ResultCode.SUCCESS.getCode();
+
+    @Builder.Default
+    private ResultCode result = ResultCode.SUCCESS;
+
+    /**
+     * 业务数据
+     */
+    private Object data;
+
     public boolean isSuccess() {
-        return code == ResultCode.SUCCESS;
+        return code == ResultCode.SUCCESS.code;
+    }
+
+    public BaseResponse(ResultCode resultCode){
+        this.code = resultCode.getCode();
+        this.message = resultCode.getMsg();
     }
 }

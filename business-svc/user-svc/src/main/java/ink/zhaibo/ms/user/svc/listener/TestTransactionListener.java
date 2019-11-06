@@ -1,4 +1,4 @@
-package ink.zhaibo.ms.biz.user.svc.listener;
+package ink.zhaibo.ms.user.svc.listener;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.LocalTransactionState;

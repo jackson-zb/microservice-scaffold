@@ -28,8 +28,8 @@ public class UserController {
 
     @PostMapping("getById")
     public GetUserResponse getUser(@RequestBody @Valid GetUserRequest request) {
+        log.info("用户Id:{}", request);
         GetUserDto getUserDto = userClient.getUser(request.getUserId());
-        log.info("用户Id:{}", request.getUserId().toString());
         GetUserResponse response = new GetUserResponse();
         BeanUtils.copyProperties(getUserDto, response);
         return response;

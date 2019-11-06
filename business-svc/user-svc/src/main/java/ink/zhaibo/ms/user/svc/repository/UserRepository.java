@@ -1,6 +1,6 @@
-package ink.zhaibo.ms.biz.user.svc.repository;
+package ink.zhaibo.ms.user.svc.repository;
 
-import ink.zhaibo.ms.biz.user.svc.entity.User;
+import ink.zhaibo.ms.user.svc.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
