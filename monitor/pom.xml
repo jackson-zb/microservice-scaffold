@@ -9,4 +9,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>monitor</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>sentinel-dashboard</module>
+        <module>springboot-admin</module>
+    </modules>
 </project>

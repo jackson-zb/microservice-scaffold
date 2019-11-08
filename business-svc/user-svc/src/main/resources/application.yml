@@ -5,9 +5,9 @@ spring:
     name: user-svc
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://132.232.59.17:3306/userdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Hongkong
-    username: root
-    password: root
+    url: ${user-svc.datasource.url}
+    username: ${user-svc.datasource.username}
+    password: ${user-svc.datasource.password}
     druid:
       db-type: mysql
   jpa:
@@ -18,6 +18,8 @@ spring:
   cloud:
     nacos:
       discovery:
+        server-addr: 127.0.0.1:8848
+      config:
         server-addr: 127.0.0.1:8848
 
 rocketmq:
