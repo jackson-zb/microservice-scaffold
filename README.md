@@ -1,5 +1,6 @@
 # microservice-scaffold
-
+[![Build Status](https://travis-ci.org/michaelliao/openweixin.svg?branch=master)](https://travis-ci.org/ZhaiBo/microservice-scaffold)
+[![codecov](https://codecov.io/gh/ZhaiBo/microservice-scaffold/branch/master/graph/badge.svg)](https://codecov.io/gh/ZhaiBo/microservice-scaffold)
 ### nacos面板：http://localhost:8848/nacos/index.html 帐号和密码：nacos nacos
 ### hystrix面板：http://localhost:8761/hystrix
 ### kibana http://localhost:5601
