@@ -35,8 +35,13 @@ public class BaseResponse implements Serializable {
         return code == ResultCode.SUCCESS.code;
     }
 
-    public BaseResponse(ResultCode resultCode){
+    public BaseResponse(ResultCode resultCode) {
         this.code = resultCode.getCode();
         this.message = resultCode.getMsg();
     }
+
+    public BaseResponse setFail() {
+        return new BaseResponse(ResultCode.FAILURE);
+    }
+
 }
