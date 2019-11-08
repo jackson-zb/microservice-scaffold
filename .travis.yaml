@@ -1,21 +1,12 @@
 language: java
 
-matrix:
-  include:
-  - jdk: oraclejdk8
-    env: BUILD_JDK=ORACLE_JDK_8
-  - jdk: oraclejdk11
-    env: BUILD_JDK=ORACLE_JDK_11
-  allow_failures:
-  - env: BUILD_JDK=ORACLE_JDK_11
-
-# https://docs.travis-ci.com/user/languages/java/#maven-dependency-management -Dmaven.javadoc.skip=true -B -V -DminimumPriority=1
-install:
-  - mvn install -DskipTests=true
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+jdk:
+  - oraclejdk8
 
 cache:
   directories:
-  - $HOME/.m2/
+  - '$HOME/.m2/repository'
+
+script:
+  - mvn clean package -DskipTests=true
+
