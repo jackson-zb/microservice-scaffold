@@ -18,6 +18,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {
         "ink.zhaibo.ms.web.app",
         "ink.zhaibo.ms.user.svc",
+        "ink.zhaibo.ms.common.config",
 })
 public class WebAppApplication {
     public static void main(String[] args) {
