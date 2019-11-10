@@ -16,6 +16,10 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.validation.ConstraintViolationException;
 
+/**
+ * @Author zhaibo
+ * @Date 2019/11/10 20:23
+ */
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionTranslator {

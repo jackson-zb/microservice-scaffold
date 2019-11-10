@@ -4,7 +4,8 @@ import ink.zhaibo.ms.common.api.ResultCode;
 import lombok.Getter;
 
 /**
- * Business Service Exception
+ * @Author zhaibo
+ * @Date 2019/11/10 20:24
  */
 public class ServiceException extends RuntimeException {
     private static final long serialVersionUID = 2359767895161832954L;

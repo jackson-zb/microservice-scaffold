@@ -33,7 +33,7 @@
         <logstash.version>4.9</logstash.version>
         <codehaus.version>2.7</codehaus.version>
         <spring.boot.admin.version>2.1.0</spring.boot.admin.version>
-
+        <hutool.core.version>4.1.9</hutool.core.version>
     </properties>
 
     <modules>
@@ -123,6 +123,11 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
                 <version>${nacos.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.core.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
