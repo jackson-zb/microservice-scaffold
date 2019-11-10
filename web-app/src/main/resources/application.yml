@@ -1,12 +1,3 @@
-server:
-  port: 8087
-spring:
-  application:
-    name: web-app
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
 feign:
   sentinel:
     enabled: true
@@ -14,3 +5,9 @@ feign:
 ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

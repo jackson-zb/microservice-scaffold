@@ -1,16 +1,5 @@
-server:
-  port: 8761
-
-spring:
-  application:
-    name: registry
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,env,auditevents,metrics,loggers,logfile,httptrace,flyway,liquidbase,shutdown,mappings,scheduledtasks,threaddump,heapdump,prometheus
+        include: '*'

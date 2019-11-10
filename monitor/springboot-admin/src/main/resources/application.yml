@@ -1,0 +1,8 @@
+spring:
+  security:
+    user:
+      name: ${AMDIN_USERNAME:admin}
+      password: ${AMDIN_PASSWORD:admin}
+
+
+

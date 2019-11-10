@@ -1,13 +1,9 @@
-server:
-  port: 8090
 spring:
-  application:
-    name: user-svc
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${user-svc.datasource.url}
-    username: ${user-svc.datasource.username}
-    password: ${user-svc.datasource.password}
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:${DB_TYPE:mysql}://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:userdb}?characterEncoding=UTF-8&useUnicode=true&useSSL=false
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
     druid:
       db-type: mysql
   jpa:
@@ -15,12 +11,6 @@ spring:
     show-sql: true
     jackson:
       time-zone: GMT+8
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-      config:
-        server-addr: 127.0.0.1:8848
 
 rocketmq:
   producer:
@@ -31,3 +21,9 @@ rocketmq:
     consumer:
       groupName: ${spring.application.name}
       namesrvAddr: 114.67.106.146:9876
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
