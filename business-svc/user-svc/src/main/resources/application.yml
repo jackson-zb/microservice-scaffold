@@ -15,12 +15,12 @@ spring:
 rocketmq:
   producer:
     groupName: ${spring.application.name}
-    namesrvAddr: 114.67.106.146:9876
+    namesrvAddr:
     default: false
   rocketmq:
     consumer:
       groupName: ${spring.application.name}
-      namesrvAddr: 114.67.106.146:9876
+      namesrvAddr:
 
 management:
   endpoints:
