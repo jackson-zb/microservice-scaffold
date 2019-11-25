@@ -19,7 +19,6 @@ import javax.sql.DataSource;
 /**
  * @author zhaibo
  * @description 认证服务器配置
- * @date 2019/11/19
  */
 @Configuration
 @EnableAuthorizationServer
