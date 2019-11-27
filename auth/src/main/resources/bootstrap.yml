@@ -1,0 +1,14 @@
+server:
+  port: ${SERVER_PORT:8190}
+spring:
+  application:
+    name: auth
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8848}
+      config:
+        server-addr: ${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8848}
+        file-extension: yml
