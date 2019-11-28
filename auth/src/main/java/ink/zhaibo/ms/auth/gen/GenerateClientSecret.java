@@ -9,9 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  */
 public class GenerateClientSecret {
     public static void main(String[] args) {
-        String clientId = "webApp";
+        String clientSecret = "appClientSecret";
         PasswordEncoder encoder = new BCryptPasswordEncoder();
-        String clientSecret = encoder.encode(clientId);
-        System.out.println(clientSecret);
+        System.out.println(encoder.encode(clientSecret));
     }
 }
