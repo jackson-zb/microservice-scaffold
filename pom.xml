@@ -9,13 +9,21 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <common.version>1.0-SNAPSHOT</common.version>
-        <spring.boot.version>2.1.2.RELEASE</spring.boot.version>
-        <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
+        <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
+        <spring.cloud.version>Greenwich.SR2</spring.cloud.version>
         <swagger.version>2.9.2</swagger.version>
         <structlog4j.version>1.0.0</structlog4j.version>
         <druid.version>1.1.18</druid.version>
@@ -25,7 +33,6 @@
         <activiti-diagram-rest.version>5.22.0</activiti-diagram-rest.version>
         <activiti-simple-workflow.version>5.22.0</activiti-simple-workflow.version>
         <rocketmq.version>4.3.0</rocketmq.version>
-        <oauth2.version>2.0.12.RELEASE</oauth2.version>
         <zipkin.version>2.12.9</zipkin.version>
         <spring.cloud.alibaba.version>0.2.1.RELEASE</spring.cloud.alibaba.version>
         <nacos.version>0.9.0.RELEASE</nacos.version>
@@ -33,7 +40,6 @@
         <logstash.version>4.9</logstash.version>
         <codehaus.version>2.7</codehaus.version>
         <spring.boot.admin.version>2.1.0</spring.boot.admin.version>
-        <hutool.core.version>4.1.9</hutool.core.version>
     </properties>
 
     <modules>
@@ -155,7 +161,7 @@
                         <format>html</format>
                         <format>xml</format>
                     </formats>
-                    <check />
+                    <check/>
                 </configuration>
             </plugin>
             <plugin>

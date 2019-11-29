@@ -1,8 +1,11 @@
 zuul:
   routes:
-    user:
+    webapp:
       path: /webapp/**
       serviceId: web-app
+    auth:
+      path: /auth/**
+      serviceId: auth
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000
