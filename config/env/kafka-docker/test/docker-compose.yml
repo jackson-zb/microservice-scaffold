@@ -1,0 +1,45 @@
+version: '2.1'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181"
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - "9092"
+    environment:
+      HOSTNAME_COMMAND: "echo $$(hostname)"
+      KAFKA_ADVERTISED_PORT: 9092
+      KAFKA_PORT: 9092
+      BROKER_ID_COMMAND: "docker inspect --format '{{ .Name }}' $$(hostname) | awk -F_ '{ printf $$NF }'"
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  kafkatest:
+    image: wurstmeister/kafka
+    environment:
+      KAFKA_PORT: 9092
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - .:/tests
+      - /var/run/docker.sock:/var/run/docker.sock
+    working_dir: /tests
+    entrypoint:
+      - ./runTestPattern.sh
+    command:
+      - "*/*.kafka.sh"
+
+  kafkacattest:
+    image: confluentinc/cp-kafkacat:5.0.0
+    environment:
+       - BROKER_LIST
+       - KAFKA_VERSION=${KAFKA_VERSION-2.3.0}
+    volumes:
+      - .:/tests
+    working_dir: /tests
+    entrypoint:
+      - ./runTestPattern.sh
+    command:
+      - "*/*.kafkacat.sh"

@@ -15,3 +15,6 @@ management:
     web:
       exposure:
         include: '*'
+logging:
+  kafka:
+    host: ${LOGGING_KAFKA_HOST:localhost}:${LOGGING_KAFKA_PORT:9092}

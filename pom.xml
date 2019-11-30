@@ -40,6 +40,7 @@
         <logstash.version>4.9</logstash.version>
         <codehaus.version>2.7</codehaus.version>
         <spring.boot.admin.version>2.1.0</spring.boot.admin.version>
+        <logback.kafka.version>0.2.0-RC2</logback.kafka.version>
     </properties>
 
     <modules>
@@ -139,11 +140,16 @@
     </dependencyManagement>
 
     <dependencies>
-        <!--<dependency>
+        <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
             <version>${logstash.version}</version>
-        </dependency>-->
+        </dependency>
+        <dependency>
+            <groupId>com.github.danielwegener</groupId>
+            <artifactId>logback-kafka-appender</artifactId>
+            <version>${logback.kafka.version}</version>
+        </dependency>
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>

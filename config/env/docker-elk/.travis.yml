@@ -1,0 +1,52 @@
+language: minimal
+services: docker
+
+env:
+  - DOCKER_COMPOSE_VERSION=1.14.0
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y expect jq
+
+install:
+  # Install Docker Compose
+  - curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o "$HOME/bin/docker-compose"
+  - chmod +x "$HOME/bin/docker-compose"
+  - docker-compose --version
+
+before_script:
+  # Build images
+  - docker-compose build
+
+  # Use built-in users
+  - sed -i 's/\(elasticsearch.username:\) elastic/\1 kibana/g' kibana/config/kibana.yml
+  - sed -i 's/\(xpack.monitoring.elasticsearch.username:\) elastic/\1 logstash_system/g' logstash/config/logstash.yml
+
+script:
+  # Compose
+  - docker-compose up -d elasticsearch
+  - sleep 30
+  - .travis/elasticsearch-setup-passwords.exp
+  - docker-compose up -d
+  - .travis/run-tests.sh
+  - docker-compose ps
+  - docker-compose logs elasticsearch
+  - docker-compose logs kibana
+  - docker-compose logs logstash
+  - docker-compose down -v
+
+  # Swarm
+  - docker swarm init
+  - docker stack deploy -c ./docker-stack.yml elk
+  - docker service scale elk_kibana=0 --detach=false
+  - docker service scale elk_logstash=0 --detach=false
+  - sleep 40
+  - .travis/elasticsearch-setup-passwords.exp swarm
+  - docker service scale elk_kibana=1 --detach=false
+  - docker service scale elk_logstash=1 --detach=false
+  - .travis/run-tests.sh swarm
+  - docker stack services elk
+  - docker service logs elk_elasticsearch
+  - docker service logs elk_kibana
+  - docker service logs elk_logstash
+  - docker stack rm elk
