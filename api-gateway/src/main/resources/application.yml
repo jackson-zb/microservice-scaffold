@@ -1,0 +1,30 @@
+zuul:
+  routes:
+    webapp:
+      path: /webapp/**
+      serviceId: web-app
+    auth:
+      path: /auth/**
+      serviceId: auth
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+kafka:
+  host: ${LOGGING_KAFKA_HOST:localhost}:${LOGGING_KAFKA_PORT:9092}
+
+logging:
+  level:
+    org.springframework.security.oauth2: debug
+
+

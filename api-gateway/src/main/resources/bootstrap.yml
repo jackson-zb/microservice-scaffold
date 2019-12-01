@@ -1,0 +1,12 @@
+server:
+  port: ${SERVER_PORT:8088}
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8848}
+      config:
+        server-addr: ${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8848}
+        file-extension: yml

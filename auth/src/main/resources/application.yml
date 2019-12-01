@@ -6,3 +6,10 @@ spring:
     password: ${DB_PASSWORD:root}
     hikari:
       max-lifetime: 360000000
+
+kafka:
+  host: ${LOGGING_KAFKA_HOST:localhost}:${LOGGING_KAFKA_PORT:9092}
+
+logging:
+  level:
+    org.springframework.security.oauth2: debug
