@@ -12,18 +12,11 @@ spring:
     jackson:
       time-zone: GMT+8
 
-rocketmq:
-  producer:
-    groupName: ${spring.application.name}
-    namesrvAddr:
-    default: false
-  rocketmq:
-    consumer:
-      groupName: ${spring.application.name}
-      namesrvAddr:
-
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+
+kafka:
+  host: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}

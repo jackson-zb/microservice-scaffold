@@ -49,8 +49,8 @@
         <module>api-gateway</module>
         <module>auth</module>
         <module>monitor</module>
-        <module>business-svc</module>
         <module>web-app</module>
+        <module>business</module>
     </modules>
 
     <dependencyManagement>

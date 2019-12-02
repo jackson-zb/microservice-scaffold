@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration>
 <configuration>
-    <springProperty scope="context" name="kakfaHost" source="logging.kafka.host" defaultValue="localhost"/>
+    <springProperty scope="context" name="kakfaHost" source="kafka.host" defaultValue="localhost:9092"/>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <appender name="KAFKA" class="com.github.danielwegener.logback.kafka.KafkaAppender">
@@ -9,13 +9,12 @@
             <pattern>
                 %d{yyyy-MM-dd HH:mm:ss SSS} [%thread] %-5level %logger{50} - %msg%n
             </pattern>
-            <charset>UTF-8</charset>
-            <topic>jackson</topic>
-            <appender-ref ref="CONSOLE"/>
-            <producerConfig>bootstrap.servers=${kakfaHost}</producerConfig>
-            <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.NoKeyKeyingStrategy"/>
-            <diliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy"/>
         </encoder>
+        <topic>test</topic>
+        <appender-ref ref="CONSOLE"/>
+        <producerConfig>bootstrap.servers=${kakfaHost}</producerConfig>
+        <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.NoKeyKeyingStrategy"/>
+        <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy"/>
     </appender>
 
     <root level="INFO">

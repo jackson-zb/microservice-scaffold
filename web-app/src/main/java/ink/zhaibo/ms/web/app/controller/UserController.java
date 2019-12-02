@@ -1,9 +1,9 @@
 package ink.zhaibo.ms.web.app.controller;
 
-import ink.zhaibo.ms.user.api.client.UserClient;
-import ink.zhaibo.ms.user.api.dto.GetUserDto;
 import ink.zhaibo.ms.web.app.api.GetUserRequest;
 import ink.zhaibo.ms.web.app.api.GetUserResponse;
+import ink.zhaibo.ms.web.app.client.UserClient;
+import ink.zhaibo.ms.web.app.client.dto.GetUserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,6 @@ public class UserController {
 
     @PostMapping("getById")
     public GetUserResponse getUser(@RequestBody @Valid GetUserRequest request) {
-        log.info("用户Id:{}", request);
         GetUserDto getUserDto = userClient.getUser(request.getUserId());
         GetUserResponse response = new GetUserResponse();
         BeanUtils.copyProperties(getUserDto, response);

@@ -21,10 +21,14 @@ management:
         include: '*'
 
 kafka:
-  host: ${LOGGING_KAFKA_HOST:localhost}:${LOGGING_KAFKA_PORT:9092}
+  host: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
 
 logging:
   level:
     org.springframework.security.oauth2: debug
 
-
+spring:
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}

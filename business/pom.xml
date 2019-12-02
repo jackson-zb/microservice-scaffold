@@ -8,8 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <version>1.0-SNAPSHOT</version>
 
-    <artifactId>business-svc</artifactId>
+    <artifactId>business</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>user-svc</module>

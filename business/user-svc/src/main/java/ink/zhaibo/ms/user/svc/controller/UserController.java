@@ -1,6 +1,6 @@
 package ink.zhaibo.ms.user.svc.controller;
 
-import ink.zhaibo.ms.user.api.dto.GetUserDto;
+import ink.zhaibo.ms.user.svc.dto.GetUserDto;
 import ink.zhaibo.ms.user.svc.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

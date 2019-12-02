@@ -1,6 +1,6 @@
-package ink.zhaibo.ms.web.app.client.dto;
+package ink.zhaibo.ms.web.app.client;
 
-import ink.zhaibo.ms.user.api.dto.GetUserDto;
+import ink.zhaibo.ms.web.app.client.dto.GetUserDto;
 import org.springframework.stereotype.Component;
 
 /**

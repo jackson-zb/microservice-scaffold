@@ -1,14 +1,13 @@
-package ink.zhaibo.ms.web.app.client.dto;
+package ink.zhaibo.ms.web.app.client;
 
-import ink.zhaibo.ms.user.api.dto.GetUserDto;
+import ink.zhaibo.ms.web.app.client.dto.GetUserDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
 /**
- * @Author zhaibo
- * @Date 2019/10/17 14:24
+ * @author zhaibo
+ * @date 2019/12/2
  */
 @FeignClient(name = "user-svc", path = "/user/", fallback = UserClientFallback.class)
 public interface UserClient {
