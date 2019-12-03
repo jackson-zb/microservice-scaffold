@@ -18,6 +18,14 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
+    private static String[] ignores;
+
+    static {
+        ignores = new String[]{
+                "/auth/**"
+        };
+    }
+
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
 
@@ -28,7 +36,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/auth/**").permitAll()
+        http.authorizeRequests().antMatchers(ignores).permitAll()
                 .and().authorizeRequests().anyRequest().authenticated();
     }
 }

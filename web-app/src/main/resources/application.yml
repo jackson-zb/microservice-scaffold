@@ -8,6 +8,8 @@ ribbon:
 
 management:
   endpoints:
+    promethus:
+      enable: true
     web:
       exposure:
         include: '*'

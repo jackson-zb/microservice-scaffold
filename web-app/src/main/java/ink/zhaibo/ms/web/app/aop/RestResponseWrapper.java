@@ -35,9 +35,15 @@ public class RestResponseWrapper implements ResponseBodyAdvice<Object> {
         if (MediaType.IMAGE_JPEG.getType().equalsIgnoreCase(mediaType.getType())) {
             return body;
         }
+
         if (body instanceof BaseResponse) {
             return body;
         }
+
+        if (serverHttpRequest.getURI().getPath().contains("actuator")) {
+            return body;
+        }
+
         return new BaseResponse(ResultCode.SUCCESS, body);
     }
 }
