@@ -25,6 +25,7 @@ public class UserController {
 
     @GetMapping("{id}")
     public GetUserDto getUser(@NotNull @PathVariable Long id) {
+        log.info("我去，这是怎么回事?");
         return userService.getUser(id);
     }
 }

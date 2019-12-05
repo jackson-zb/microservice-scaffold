@@ -7,7 +7,7 @@
     <appender name="KAFKA" class="com.github.danielwegener.logback.kafka.KafkaAppender">
         <encoder>
             <pattern>
-                %d{yyyy-MM-dd HH:mm:ss SSS} [%thread] %-5level %logger{50} - %msg%n
+                %d{yyyy-MM-dd HH:mm:ss SSS} [%X{PtxId}] [%thread] %-5level %logger{50} - %msg%n
             </pattern>
         </encoder>
         <topic>test</topic>

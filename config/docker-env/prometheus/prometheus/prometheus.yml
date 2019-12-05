@@ -27,7 +27,7 @@ alerting:
 # Here it's Prometheus itself.
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'web-app'
+  - job_name: 'user-svc'
 
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
@@ -36,7 +36,7 @@ scrape_configs:
     static_configs:
          - targets: ['host.docker.internal:8087'] # 这里修改为需要抓取数据的应用端口
            labels:
-             application: 'web-app'
+             application: 'user-svc'
 
   - job_name: 'prometheus'
 

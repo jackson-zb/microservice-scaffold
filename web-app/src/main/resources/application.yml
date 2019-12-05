@@ -16,3 +16,10 @@ management:
 
 kafka:
   host: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss SSS} [%X{PtxId}] [%thread] %-5level %logger{50} - %msg%n"
+  level:
+    com.alibaba.nacos: error
+

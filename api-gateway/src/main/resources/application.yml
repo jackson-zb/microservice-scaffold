@@ -26,6 +26,9 @@ kafka:
 logging:
   level:
     org.springframework.security.oauth2: debug
+    com.alibaba.nacos: error
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss SSS} [%X{PtxId}] [%thread] %-5level %logger{50} - %msg%n"
 
 spring:
   redis:
