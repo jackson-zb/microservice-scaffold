@@ -1,5 +1,7 @@
 package ink.zhaibo.ms.user.svc.controller;
 
+import ink.zhaibo.ms.common.exception.ResultCode;
+import ink.zhaibo.ms.common.exception.ServiceException;
 import ink.zhaibo.ms.user.svc.dto.GetUserDto;
 import ink.zhaibo.ms.user.svc.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +27,6 @@ public class UserController {
 
     @GetMapping("{id}")
     public GetUserDto getUser(@NotNull @PathVariable Long id) {
-        log.info("我去，这是怎么回事?");
         return userService.getUser(id);
     }
 }

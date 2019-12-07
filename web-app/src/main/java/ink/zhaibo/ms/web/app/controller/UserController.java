@@ -1,5 +1,6 @@
 package ink.zhaibo.ms.web.app.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import ink.zhaibo.ms.web.app.api.GetUserRequest;
 import ink.zhaibo.ms.web.app.api.GetUserResponse;
 import ink.zhaibo.ms.web.app.client.dto.GetUserDto;
@@ -26,15 +27,11 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private RestTemplate restTemplate;
 
+    @SentinelResource("getUserById")
     @PostMapping("getById")
     public GetUserResponse getUserById(@RequestBody @Valid GetUserRequest request) {
-        GetUserDto getUserDto = restTemplate.getForObject("http://localhost:8000/user/1", GetUserDto.class, request.getUserId());
-        GetUserResponse response = new GetUserResponse();
-        BeanUtils.copyProperties(getUserDto,response);
-        return response;
+        return userService.getUserById(request);
     }
 }
 

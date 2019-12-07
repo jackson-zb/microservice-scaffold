@@ -41,6 +41,9 @@
         <codehaus.version>2.7</codehaus.version>
         <spring.boot.admin.version>2.1.0</spring.boot.admin.version>
         <logback.kafka.version>0.2.0-RC2</logback.kafka.version>
+        <alibaba.sentinel.version>2.1.1.RELEASE</alibaba.sentinel.version>
+        <sentinel.nacos.datasource.version>1.7.0</sentinel.nacos.datasource.version>
+        <fastjson.version>1.2.62</fastjson.version>
     </properties>
 
     <modules>
@@ -116,11 +119,6 @@
                 <version>${nacos.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-sentinel</artifactId>
-                <version>${nacos.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>ink.zhaibo.ms</groupId>
                 <artifactId>common</artifactId>
                 <version>${common.version}</version>
@@ -134,6 +132,16 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-core</artifactId>
                 <version>${hutool.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+                <version>${alibaba.sentinel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

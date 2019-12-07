@@ -1,5 +1,7 @@
 package ink.zhaibo.ms.web.app.service.impl;
 
+import ink.zhaibo.ms.common.exception.ResultCode;
+import ink.zhaibo.ms.common.exception.ServiceException;
 import ink.zhaibo.ms.web.app.api.GetUserRequest;
 import ink.zhaibo.ms.web.app.api.GetUserResponse;
 import ink.zhaibo.ms.web.app.client.UserClient;

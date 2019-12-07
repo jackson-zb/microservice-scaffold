@@ -1,4 +1,4 @@
-package ink.zhaibo.ms.common.api;
+package ink.zhaibo.ms.common.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 @Getter
 @AllArgsConstructor
 public enum ResultCode {
-    SUCCESS(HttpServletResponse.SC_OK, "Operation is Successful"),
 
-    FAILURE(HttpServletResponse.SC_BAD_REQUEST, "Biz Exception"),
+    SUCCESS(HttpServletResponse.SC_OK, "SUCCESS"),
+
+    FAILURE(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Biz Exception"),
 
     UN_AUTHORIZED(HttpServletResponse.SC_UNAUTHORIZED, "Request Unauthorized"),
 
@@ -38,7 +39,15 @@ public enum ResultCode {
 
     PARAM_VALID_ERROR(HttpServletResponse.SC_BAD_REQUEST, "Parameter Validation Error");
 
-    final int code;
+    int code;
 
-    final String msg;
+    String msg;
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
 }

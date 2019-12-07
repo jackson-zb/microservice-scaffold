@@ -1,6 +1,5 @@
 package ink.zhaibo.ms.common.exception;
 
-import ink.zhaibo.ms.common.api.ResultCode;
 import lombok.Getter;
 
 /**
@@ -25,6 +24,8 @@ public class ServiceException extends RuntimeException {
 
     public ServiceException(ResultCode resultCode, String msg) {
         super(msg);
+        resultCode.setMsg(msg);
+        resultCode.setCode(resultCode.getCode());
         this.resultCode = resultCode;
     }
 

@@ -1,10 +1,11 @@
 package ink.zhaibo.ms.common.api;
 
 import ink.zhaibo.ms.common.consts.GlobalConstants;
+import ink.zhaibo.ms.common.exception.ResultCode;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.json.simple.JSONObject;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -16,24 +17,30 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class BaseResponse implements Serializable {
     private static final long serialVersionUID = 4851720251615536689L;
-    @Builder.Default
+    public static final String CODE = "code";
+    public static final String MESSAGE = "message";
+    public static final String DATA = "data";
+    public static final String TIMESTAMP = "timeStamp";
+
     private Integer code = ResultCode.SUCCESS.getCode();
-    @Builder.Default
     private String message = ResultCode.SUCCESS.getMsg();
     private Object data;
-    @Builder.Default
-    private String timeStamp = LocalDateTime.now().format(GlobalConstants.DATE_TIME_FORMATTER);
-
-    public boolean isSuccess() {
-        return code == ResultCode.SUCCESS.code;
-    }
+    private String timeStamp = "";
 
     public BaseResponse(ResultCode resultCode) {
         this.code = resultCode.getCode();
         this.message = resultCode.getMsg();
+        this.data = new JSONObject();
+        this.timeStamp = LocalDateTime.now().format(GlobalConstants.DATE_TIME_FORMATTER);
+    }
+
+    public BaseResponse(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+        this.data = new JSONObject();
+        this.timeStamp = LocalDateTime.now().format(GlobalConstants.DATE_TIME_FORMATTER);
     }
 
     public BaseResponse(ResultCode resultCode, Object data) {
@@ -43,8 +50,17 @@ public class BaseResponse implements Serializable {
         this.timeStamp = LocalDateTime.now().format(GlobalConstants.DATE_TIME_FORMATTER);
     }
 
-    public BaseResponse setFail() {
-        return new BaseResponse(ResultCode.FAILURE);
+    public void setErrResponse(ResultCode resultCode) {
+        this.code = resultCode.getCode();
+        this.message = resultCode.getMsg();
+        this.data = new JSONObject();
+        this.timeStamp = LocalDateTime.now().format(GlobalConstants.DATE_TIME_FORMATTER);
     }
 
+    public void setErrResponse(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+        this.data = new JSONObject();
+        this.timeStamp = LocalDateTime.now().format(GlobalConstants.DATE_TIME_FORMATTER);
+    }
 }
