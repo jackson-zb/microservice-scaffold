@@ -1,35 +1,35 @@
-## microservice-scaffold
+# microservice-scaffold
 [![Build Status](https://travis-ci.org/michaelliao/openweixin.svg?branch=master)](https://travis-ci.org/ZhaiBo/microservice-scaffold)
 [![codecov](https://codecov.io/gh/ZhaiBo/microservice-scaffold/branch/master/graph/badge.svg)](https://codecov.io/gh/ZhaiBo/microservice-scaffold)
 
 基于Spring Cloud（Greenwich.SR2）搭建的微服务脚手架，已集成注册中心（Nacos Config）、配置中心（Nacos Discovery）、认证授权（Oauth
 2 + JWT）、日志处理（ELK + Kafka）、限流熔断（AliBaba Sentinel）、应用指标监控（Prometheus + Grafana）、调用链监控（Pinpoint）、以及Spring Boot Admin。
 
-## 快速开始
+# 快速开始
 依赖环境：
 - [java8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 
 - [docker](https://www.docker.com/) 
 - [git](https://git-scm.com/)
 - [maven](http://maven.apache.org/) 
 
-###  启动
-#### 基础环境搭建
-##### nacos
+##  启动
+### 基础环境搭建
+#### nacos
 当前应用配置文件在config/example下，需要导入到nacos中，[nacos官方文档](https://editor.csdn.net/md/?articleId=103337840)
-##### elk + kafka
+#### elk + kafka
 进入config/docker-env/kafka-docker目录下，执行：`docker-compose up -d`；进入config/docker-env/docker-elk目录下，执行：`docker-compose up -d`即可。
 可参考：[Spring Cloud日志集中化处理：ELK + Kafka](https://editor.csdn.net/md/?articleId=102717007)
-##### prometheus + grafana
+#### prometheus + grafana
 进入config/docker-env/prometheus目录下，执行：`docker-compose up -d`即可。
 可参考：[Spring Cloud应用指标监控：Prometheus + Grafana](https://editor.csdn.net/md/?articleId=103337840)
-##### pinpoint
+#### pinpoint
 进入config/docker-env/prometheus目录下，执行：`docker-compose pull && docker-compose up -d`即可。
 可参考：[Spring Cloud链路追踪：Pinpoint](https://editor.csdn.net/md/?articleId=103335777)
 
-##### 创建数据库及表
+### 创建数据库及表
 导入根路径db/目录下各模块下数据库脚本，可创建一个库或者分模块创建。
 
-##### 启动应用
+### 启动应用
 将工程导入idea，逐个启动SpringBoot应用即可。所依赖的基础服务如下：
 
 |  基础服务           |   服务名         |  端口     | 说明                                            |
