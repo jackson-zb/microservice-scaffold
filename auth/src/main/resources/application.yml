@@ -6,10 +6,18 @@ spring:
     password: ${DB_PASSWORD:root}
     hikari:
       max-lifetime: 360000000
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
 
 kafka:
-  host: ${LOGGING_KAFKA_HOST:localhost}:${LOGGING_KAFKA_PORT:9092}
+  host: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
 
 logging:
   level:
     org.springframework.security.oauth2: debug
+    com.alibaba.nacos: error
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss SSS} [%X{PtxId}] [%thread] %-5level %logger{50} - %msg%n"
+

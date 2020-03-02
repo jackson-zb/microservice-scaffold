@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:${DB_TYPE:mysql}://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:userdb}?characterEncoding=UTF-8&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+    druid:
+      db-type: mysql
+  jpa:
+    database: mysql
+    show-sql: true
+    jackson:
+      time-zone: GMT+8
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+kafka:
+  host: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss SSS} [%X{PtxId}] [%thread] %-5level %logger{50} - %msg%n"
+  level:
+    com.alibaba.nacos: error

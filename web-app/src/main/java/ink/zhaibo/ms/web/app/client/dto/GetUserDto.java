@@ -9,10 +9,8 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Accessors(chain = true)
-public class GetUserDto extends BaseResponse implements Serializable{
+public class GetUserDto extends BaseResponse {
     private static final long serialVersionUID = -3480857767475234603L;
     private String userName;
     private String password;

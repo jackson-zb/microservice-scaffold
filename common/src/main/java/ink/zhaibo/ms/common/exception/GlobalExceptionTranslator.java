@@ -1,7 +1,6 @@
 package ink.zhaibo.ms.common.exception;
 
 import ink.zhaibo.ms.common.api.BaseResponse;
-import ink.zhaibo.ms.common.api.ResultCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
@@ -99,4 +98,5 @@ public class GlobalExceptionTranslator {
         log.error("Internal Server Error", e);
         return new BaseResponse(ResultCode.INTERNAL_SERVER_ERROR);
     }
+
 }

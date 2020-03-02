@@ -1,9 +1,10 @@
 package ink.zhaibo.ms.web.app.controller;
 
-import ink.zhaibo.ms.user.api.client.UserClient;
-import ink.zhaibo.ms.user.api.dto.GetUserDto;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import ink.zhaibo.ms.web.app.api.GetUserRequest;
 import ink.zhaibo.ms.web.app.api.GetUserResponse;
+import ink.zhaibo.ms.web.app.client.dto.GetUserDto;
+import ink.zhaibo.ms.web.app.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
 
@@ -24,15 +26,12 @@ import javax.validation.Valid;
 public class UserController {
 
     @Autowired
-    private UserClient userClient;
+    private UserService userService;
 
+    @SentinelResource("getUserById")
     @PostMapping("getById")
-    public GetUserResponse getUser(@RequestBody @Valid GetUserRequest request) {
-        log.info("用户Id:{}", request);
-        GetUserDto getUserDto = userClient.getUser(request.getUserId());
-        GetUserResponse response = new GetUserResponse();
-        BeanUtils.copyProperties(getUserDto, response);
-        return response;
+    public GetUserResponse getUserById(@RequestBody @Valid GetUserRequest request) {
+        return userService.getUserById(request);
     }
 }
 

@@ -1,3 +1,16 @@
+spring:
+  cloud:
+    sentinel:
+      transport:
+        port: ${SENTINEL_TRANSPORT_PORT:8719}
+        dashboard: ${SENTINEL_DASHBORAD_HOST:localhost}:${SENTINEL_DASHBORAD_PORT:8080}
+      datasource:
+        ds:
+          nacos:
+            server-addr: ${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8848}
+            dataId: ${spring.application.name}-sentinel-rules
+            groupId: DEFAULT_GROUP
+            ruleType: flow
 feign:
   sentinel:
     enabled: true
@@ -8,6 +21,18 @@ ribbon:
 
 management:
   endpoints:
+    promethus:
+      enable: true
     web:
       exposure:
         include: '*'
+
+kafka:
+  host: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss SSS} [%X{PtxId}] [%thread] %-5level %logger{50} - %msg%n"
+  level:
+    com.alibaba.nacos: error
+
