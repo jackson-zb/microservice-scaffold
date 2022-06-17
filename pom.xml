@@ -43,7 +43,7 @@
         <logback.kafka.version>0.2.0-RC2</logback.kafka.version>
         <alibaba.sentinel.version>2.1.1.RELEASE</alibaba.sentinel.version>
         <sentinel.nacos.datasource.version>1.7.0</sentinel.nacos.datasource.version>
-        <fastjson.version>1.2.62</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
 
     <modules>
